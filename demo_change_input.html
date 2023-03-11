@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="input" type="text" />
+</body>
+<script>
+   // 获取输入框元素
+const input = document.querySelector('input');
+
+// 监听输入事件
+input.addEventListener('input', formatNumber);
+
+function formatNumber() {
+  // 获取输入框的值
+  let value = input.value;
+
+
+    // 将数字每三位添加一个空格
+  value = value.replace(/(\d{3})(?=\d)/g, '$1 ');
+
+  // 将非数字字符替换为,
+  value = value.replace(/[^\d]/g, ',');
+
+
+
+  // 更新输入框的值
+  input.value = value;
+}
+
+</script>
+</html>
